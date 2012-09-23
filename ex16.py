@@ -11,6 +11,7 @@ print ("If you do want that, hit RETURN.")
 
 input ("?")
 #如何识别键盘输入？
+#CTRL-C Python解释器快捷键中断进程，所以可以用来结束程序 else 有效输入但是不赋值，此句仅用于程序暂停供人确认。
 print ("Opening the file...")
 target = open(filename,'w')
 
