@@ -1,60 +1,22 @@
-# creat a mapping of state to abbreviation
-states = {
-        'Oregon': 'OR',
-        'Florida': 'FL',
-        'California': 'CA',
-        'New York': 'NY',
-        'Michigan': 'MI'
-        }
+ten_things = "Apple Oranges Crows Telephone Light Sugar"
 
-# creat a basic set of states and some cities in them
-cities = {
-        'CA': 'San Francisco',
-        'MI': 'Detroit',
-        'FL': 'Jacksonville'
-        }
+print ("Wait there's not 10 things in that list, let's fix that.")
 
-# add some more cities
-cities['NY']= 'New York'
-cities['OR']= 'Portland'
+stuff = ten_things.split(' ')
+more_stuff = ["Day", "Night", "Song", "Frisbee", "Corn", "Banana", "Girl", "Boy"]
 
-# print out some cities
-print ('_' * 10)
-print ("NY State has: ",cities['NY'])
-print ("OR State has: ",cities['OR'])
+while len(stuff) !=10:
+    next_one = more_stuff.pop()
+    print ("Adding: ", next_one)
+    stuff.append(next_one)
+    print ("There's %d items now." % len(stuff))
 
-# print some states
-print ('_' * 10)
-print ("Michigan's abbreviation is: ",states['Michigan'])
-print ("Florida's abbreviation is: ",states['Florida'])
+print ("There we go: ", stuff)
 
-# do it by using the state then cities dict
-print ('_'*10)
-print ("Michigan has:",cities[states['Michigan']])
-print ("Florida has:" ,cities[states['Florida']])
+print ("Let's do some things with stuff.")
 
-# print every state abbreviation
-print ('_'*10)
-for state,abbrev in states.items():
-    print ("%s is abbreviated %s" %(state,abbrev))
-
-# print every city in state
-print ('_'*10)
-for abbrev,city in cities.items():
-    print("%s has the city %s" %(abbrev,city))
-
-# now do both at the same time
-print ('_'*10)
-for state,abbrev in states.items():
-    print ("%s state is abbreviated %s and has city %s" %(state,abbrev,cities[abbrev]))
-
-print ('_' *10)
-# safely get a abbreviation by state that might not be there
-state = states.get('Texas',None)
-
-if not state:
-    print ("Sorry, no Texas.")
-
-#get a city with a default value
-city = cities.get('TX','Does Not Exist')
-print ("The city for the state 'TX' is : %s" %city)
+print (stuff[1])
+print (stuff[-1]) # whoa! fancy
+print (stuff.pop())
+print (' '.join(stuff)) # what? cool!
+print ('#'.join(stuff[3:5])) # super stellat!
